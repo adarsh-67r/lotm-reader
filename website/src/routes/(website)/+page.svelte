@@ -4,6 +4,7 @@
 </script>
 
 
+
 <main
   class="flex min-h-dvh flex-col items-center justify-center gap-10 p-8 md:flex-row md:justify-around"
 >
@@ -39,7 +40,7 @@
     </div>
 
     <div class="flex gap-4">
-      <a class="btn btn-lg btn-soft btn-primary" href="/book">Read Now</a>
+      <a class="btn btn-lg btn-soft btn-primary" href="/book" data-sveltekit-preload-data>Read Now</a>
       <a class="btn btn-lg btn-soft btn-secondary" href="/download">Download</a>
     </div>
   </div>
@@ -59,14 +60,14 @@
     </div>
     <div class="tooltip tooltip-left" data-tip="Contribute">
       <a
-        href="https://github.com/Bittu5134/LOTM-Reader/tree/CONTRIBUTE"
+        href="https://github.com/Bittu5134/ORV-Reader/blob/main/contributing.md"
         class="btn btn-soft btn-lg btn-warning"
         ><Icon icon="ri:edit-line" class="size-7" /></a
       >
     </div>
     <div class="tooltip tooltip-left" data-tip="Discord">
       <a
-        href="https://discord.gg/CZdNvKaNNr  "
+        href="https://discord.gg/XmzJVsyuTQ"
         class="btn btn-soft btn-lg btn-accent"
         ><Icon icon="mingcute:discord-line" class="size-7" /></a
       >

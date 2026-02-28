@@ -30,6 +30,7 @@
       indent: false,
       navbarVisible: true,
       navbarSticky: true,
+      showComments: true,
       showBottomBanner: true,
       solidBackground: true,
     });
@@ -66,6 +67,7 @@
           indent: false,
           navbarVisible: true,
           navbarSticky: true,
+          showComments: true,
           showBottomBanner: true,
           solidBackground: true,
         };
@@ -132,7 +134,7 @@
   const totalChapters = $derived(
     bookData[bookSlug][currentTL].length
   );
-  console.log(totalChapters)
+
 
   let navState = $state({ searchQuery: "", selectedTL: "webnovel" });
 
@@ -234,6 +236,13 @@
   }
 </script>
 
+<svelte:head>
+  <title>{bookSlug.toUpperCase()} {readerState.ch_meta.slug} — {readerState.ch_meta.title}</title>
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="{bookSlug.toUpperCase()} {readerState.ch_meta.slug} — {readerState.ch_meta.title}" />
+  <meta name="twitter:title" content="{bookSlug.toUpperCase()} {readerState.ch_meta.slug} — {readerState.ch_meta.title}" />
+</svelte:head>
+
 <svelte:window onkeydown={handleKeydown} />
 
 <div
@@ -271,6 +280,7 @@
             : `/read/${bookSlug}/${navState.selectedTL}/${currentChapter - 1}`}
         class="btn btn-soft btn-sm gap-2"
         aria-label={currentChapter <= 1 ? "Go Home" : "Previous Chapter"}
+
       >
         <Icon icon={currentChapter <= 1 ? "iconamoon:home-light" : "mage:previous"} class="size-5" />
         <span class="hidden sm:inline">{currentChapter <= 1 ? "Home" : "Prev"}</span>
@@ -286,6 +296,7 @@
             : `/read/${bookSlug}/${navState.selectedTL}/${currentChapter + 1}`}
         class="btn btn-soft btn-sm gap-2"
         aria-label={currentChapter >= totalChapters ? "Go Home" : "Next Chapter"}
+        data-sveltekit-preload-data="viewport"
       >
         <span class="hidden sm:inline">{currentChapter >= totalChapters ? "Home" : "Next"}</span>
         <Icon icon={currentChapter >= totalChapters ? "iconamoon:home-light" : "mage:next"} class="size-5" />
@@ -297,6 +308,7 @@
     <InfoBanner />
   {/if}
 
+  {#if prefs.config.showComments}
   <div id="comments" class="sm:mx-auto mx-0 max-w-5xl sm:px-6 px-3 pb-6 scroll-mt-20">
     <Giscus
       id="comments"
@@ -313,9 +325,9 @@
       inputPosition="top"
       theme={getGiscusTheme(prefs.config.theme)}
       lang="en"
-      loading="lazy"
     />
   </div>
+  {/if}
 </div>
 
 <style>

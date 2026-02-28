@@ -1,7 +1,6 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import { goto } from "$app/navigation"; // Added for redirection
-  import { onMount } from "svelte"; // Added for localStorage
+  import { onMount } from "svelte";
   import Icon from "@iconify/svelte";
   import imgLotmCover from "$lib/assets/web-lotm-cover.jpg?enhanced&w=9999";
   import imgCoiCover from "$lib/assets/web-coi-cover.jpg?enhanced&w=9999";
@@ -87,6 +86,27 @@
   }
 </script>
 
+<svelte:head>
+  <title>{book.title}</title>
+  <meta
+    name="description"
+    content={book.synopsis}
+  />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LOTM-Reader" />
+  <meta
+    property="og:description"
+    content={book.synopsis}
+  />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={book.title} />
+  <meta
+    name="twitter:description"
+    content={book.synopsis}
+  />
+</svelte:head>
+
 <main class="flex md:flex-row flex-col min-h-screen">
   <aside
     class="md:h-dvh md:w-[35vw] w-screen bg-base-200/50 md:sticky md:top-0 flex flex-col items-center border-b md:border-b-0 md:border-r border-base-300"
@@ -123,6 +143,7 @@
           : "#"}
         onclick={handleReadClick}
         class="btn {book.button_primary} grow shadow-lg font-bold"
+        data-sveltekit-preload-data
       >
         {#if continueData}
           <Icon icon="material-symbols:resume" class="size-5" />

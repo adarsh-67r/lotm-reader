@@ -8,11 +8,12 @@
 <main
   class="min-h-dvh flex flex-col items-center justify-center gap-10 p-8 md:flex-row md:justify-evenly"
 >
-  <a class="hover-3d static" href="./lotm">
+  <a class="hover-3d static" href="./lotm" data-sveltekit-preload-data>
     <figure class="md:w-80 w-60 rounded-2xl cursor-pointer">
       <enhanced:img
         src={imgLOTM}
         alt="Lord of the Mysteries Book Cover"
+        fetchpriority="high"
       />
     </figure>
     <!-- 8 empty divs needed for the 3D effect -->
@@ -26,12 +27,13 @@
     <div></div>
   </a>
 
-  <a class="hover-3d relative cursor-pointer" href="./coi">
+  <a class="hover-3d relative cursor-pointer" href="./coi" data-sveltekit-preload-data>
     <!-- content -->
     <figure class="md:w-80 w-60 rounded-2xl">
       <enhanced:img
         src={imgCOI}
         alt="Conspiracy of the Infinite Book Cover"
+        fetchpriority="high"
       />
     </figure>
     <!-- 8 empty divs needed for the 3D effect -->

@@ -158,7 +158,6 @@ code {
   font-family: Menlo, Monaco, "Lucida Console", Consolas, monospace;
   font-size: 85%;
   margin: 0;
-  hyphens: manual;
 }
 
 pre {
@@ -350,20 +349,25 @@ h6 {
   page-break-after: avoid;
   page-break-inside: avoid;
 }
+h4,
+h5,
+h6 {
+  border-bottom: none;
+}
 
 p {
   widows: 2;
   orphans: 2;
   margin: 1em 0;
   line-height: 1.5;
-  text-indent: 1.2em;
+/*  text-indent: 1.2em; */
 }
 
-h1 + p,
+/*h1 + p,
 h2 + p,
 hr + p {
   text-indent: 0;
-}
+}*/
 
 .epub-small {
   font-size: 0.8em;
