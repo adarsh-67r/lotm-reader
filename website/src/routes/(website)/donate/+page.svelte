@@ -35,12 +35,34 @@
     </header>
 
     <div class="space-y-6 relative z-10">
+      
+      <section
+        class="bg-[#ffb74d]/10 p-6 rounded-xl border border-[#ffb74d]/30 shadow-[0_4px_20px_rgba(255,183,77,0.1)] relative overflow-hidden"
+      >
+        <div class="flex items-center gap-2 mb-3">
+          <Icon icon="mdi:patreon" class="text-[#ffb74d] size-6" />
+          <h2 class="text-xl font-semibold text-[#ffb74d]">Patreon</h2>
+        </div>
+        <p class="text-sm text-base-content/80 mb-5">
+          Support the project directly on Patreon to help with server costs and get exclusive updates.
+        </p>
+        <a
+          href="https://www.patreon.com/cw/LazyBittu"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-[#ffb74d] text-[#1a1a2e] font-bold hover:bg-[#ffa726] hover:scale-[1.01] transition-all shadow-lg"
+        >
+          <Icon icon="mdi:patreon" class="size-5" />
+          Become a Patron
+        </a>
+      </section>
+
       <section
         class="bg-base-200/50 p-6 rounded-xl border border-white/5 shadow-inner"
       >
         <div class="flex items-center gap-2 mb-4">
           <Icon icon="mdi:gift" class="text-secondary size-6" />
-          <h2 class="text-xl font-semibold text-secondary">Donate</h2>
+          <h2 class="text-xl font-semibold text-secondary">Gift Cards</h2>
         </div>
 
         <ul class="space-y-3 text-sm">
@@ -50,7 +72,7 @@
               target="_blank"
               class="flex items-center gap-2 hover:text-primary transition-colors font-bold"
             >
-              <Icon icon="mdi:wallet" /> Eneba Wallet (Preferred)
+              <Icon icon="mdi:wallet" /> Eneba Wallet
             </a>
           </li>
           <li>
@@ -74,6 +96,7 @@
         </ul>
         <p class="mt-5 font-light text-sm">You can also send other things besides gift cards — feel free to discuss it with me on Discord or email.</p>
       </section>
+      
       <section
         class="bg-black/20 p-6 rounded-xl border border-white/5 flex flex-col md:flex-row justify-around items-center gap-6 text-center md:text-left"
       >

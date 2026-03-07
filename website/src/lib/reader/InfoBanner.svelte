@@ -9,9 +9,9 @@
   let rulesModal: HTMLDialogElement;
 
   const BANNERS = [
-    { id: "discord", weight: 3 },
+    { id: "discord", weight: 4 },
     { id: "github", weight: 1 },
-    { id: "donate", weight: 2 },
+    { id: "donate", weight: 3 },
     { id: "keybinds", weight: 1 },
     { id: "formatting", weight: 1 },
     { id: "download", weight: 2 },
@@ -126,29 +126,36 @@ $effect(() => {
 {/snippet}
 
 {#snippet donateBanner()}
-  <div
-    class="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6"
-  >
-    <div class="text-center md:text-left">
-      <p
-        class="text-base font-bold flex items-center justify-center md:justify-start gap-2"
-      >
-        <Icon icon="mdi:heart" class="text-orange-500 size-5" />
-        Support the Dev
-      </p>
-      <p class="text-xs opacity-60 mt-1">
-        Enjoying the reader? Consider buying a coffee to keep the servers
-        running.
-      </p>
-    </div>
+<div class="flex flex-col lg:flex-row items-center justify-between gap-4 md:gap-6">
+  <div class="text-center md:text-left">
+    <p class="text-base font-bold flex items-center justify-center md:justify-start gap-2">
+      <Icon icon="mdi:heart" class="text-orange-500 size-5" />
+      Support the Project
+    </p>
+    <p class="text-xs opacity-60 mt-1">
+      Enjoying the reader? Consider supporting to keep the servers running.
+    </p>
+  </div>
+
+  <div class="flex flex-wrap justify-center gap-3">
+    <a
+      href="https://www.patreon.com/cw/LazyBittu"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-sm bg-[#ffb74d] hover:bg-[#ffa726] text-[#1a1a2e] border-0 min-w-32"
+    >
+      <Icon icon="mdi:patreon" class="size-4" /> Patreon
+    </a>
+
     <a
       href="/donate"
       target="_blank"
-      class="btn btn-sm bg-orange-500 hover:bg-orange-600 text-white border-0 min-w-30"
+      class="btn btn-sm bg-orange-500 hover:bg-orange-600 text-white border-0 min-w-32"
     >
       <Icon icon="mdi:coffee" class="size-4" /> Donate
     </a>
   </div>
+</div>
 {/snippet}
 
 {#snippet keybindsBanner()}
