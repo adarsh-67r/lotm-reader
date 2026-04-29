@@ -4,6 +4,7 @@ images_default
 images_legacy
 scripts/misc/_misc/
 scripts/misc/_misc2/
+scripts/misc/_misc3/
 scripts/misc/discussions1.py
 website/src/routes/(reader)/read/**
 epub
