@@ -3,7 +3,7 @@ name: Build & Release EPUBs
 on:
   schedule:
     # Run at 00:00 UTC on the 1st and 15th of every month
-    - cron: '0 0 1,15 * *'
+    - cron: '0 0 1 * *'
   workflow_dispatch:
     # Allow manual trigger via GitHub UI
 
